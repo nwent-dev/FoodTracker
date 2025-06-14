@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		635F3DEA2DFD05C200B18808 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 635F3DE92DFD05C200B18808 /* RealmSwift */; };
+		635F3DED2DFDBADE00B18808 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 635F3DE92DFD05C200B18808 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -17,6 +18,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				635F3DED2DFDBADE00B18808 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;

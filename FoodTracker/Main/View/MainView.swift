@@ -18,10 +18,12 @@ struct MainView: View {
                 VStack(alignment: .leading) {
                     DatePicker(selection: $currentDate, displayedComponents: .date) {
                         Text("Displayed day")
+                            .foregroundStyle(.black)
                     }
                     .padding()
                     
                     Text("You ate \(vm.getFoodCountForDay(date: currentDate)) meals today:")
+                        .foregroundStyle(.black)
                         .padding()
                     
                     List {
@@ -29,7 +31,7 @@ struct MainView: View {
                             if Calendar.current.isDate(currentDate, inSameDayAs: food.date) {
                                 HStack {
                                     Text(food.name)
-                                        
+                                        .foregroundStyle(.black)
                                         .frame(maxWidth: .infinity)
                                         .padding()
                                         .background {
@@ -37,27 +39,31 @@ struct MainView: View {
                                                 .cornerRadius(30)
                                         }
                                         
-                                    Text("\(food.weight) gm")
-                                        .frame(maxWidth: .infinity)
-                                        .bold()
-                                        .padding()
-                                        .background {
-                                            Color.black.opacity(0.2)
-                                                .cornerRadius(30)
-                                        }
-                                    
                                     Spacer()
                                     
-                                    VStack{
-                                        Text(vm.dateFormatter(date: food.date))
+                                    VStack {
+                                        Text("\(food.weight) gm")
                                         Text(vm.timeFormatter(date: food.date))
                                     }
+                                    .foregroundStyle(.black)
+//                                    .frame(maxWidth: .infinity)
+                                    .bold()
+                                    .padding()
+                                    .background {
+                                        Color.black.opacity(0.2)
+                                            .cornerRadius(30)
+                                    }
+                                }
+                                .listRowBackground(Color.white)
+                                .background {
+                                    Color.white
                                 }
                             }
                         }
                         .onDelete(perform: $foods.remove)
                     }
                     .listStyle(.inset)
+                    .scrollContentBackground(.hidden)
                     
                     Spacer()
                     

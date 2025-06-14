@@ -45,6 +45,7 @@ struct AddFoodView: View {
                 
                 DatePicker(selection: $foodDate, displayedComponents: .hourAndMinute) {
                     Text("When you ate it?")
+                        .foregroundStyle(.black)
                 }
                 .padding()
                 .background {

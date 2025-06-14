@@ -16,6 +16,7 @@ struct CustomTextField: View {
                 Text("\(title)")
                     .foregroundStyle(.black)
             }
+            .foregroundStyle(.black)
             .padding()
             .background {
                 ZStack {

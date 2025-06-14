@@ -14,12 +14,21 @@ class MainViewModel: ObservableObject {
     @ObservedResults(Food.self) var foods
     
     func addFood(name: String, weight: Int, date: Date) {
-        let food = Food()
-        food.name = name
-        food.weight = weight
-        food.date = date
-        try! realm.write {
-            realm.add(food)
+        DispatchQueue.global().async {
+            autoreleasepool {
+                do {
+                    let realm = try Realm()
+                    let food = Food()
+                    food.name = name
+                    food.weight = weight
+                    food.date = date
+                    try realm.write {
+                        realm.add(food)
+                    }
+                } catch {
+                    print("Ошибка записи в Realm: \(error)")
+                }
+            }
         }
     }
     
