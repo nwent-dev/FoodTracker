@@ -6,13 +6,20 @@
 //
 
 import Foundation
+import RealmSwift
 
 class MainViewModel: ObservableObject {
-    @Published var foodData: [Food] = [Food(name: "Пироженое", date: Date(), weight: 300)]
+    let realm = try! Realm()
+    var foodData: [Food] = [/*Food(name: "Пироженое", weight: 300, date: Date())*/]
     
-    func addFood(food: Food) {
-        if !food.name.isEmpty && food.weight != 0 {
-            foodData.append(food)
+    func addFood(name: String, weight: Int, date: Date) {
+        let food = Food()
+        food.name = name
+        food.weight = weight
+        food.date = date
+        foodData.append(food)
+        try! realm.write {
+            realm.add(food)
         }
     }
     

@@ -6,6 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		635F3DEA2DFD05C200B18808 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 635F3DE92DFD05C200B18808 /* RealmSwift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		635F3DE62DFD054C00B18808 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		631D91A72DFC3AF300195651 /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635F3DEA2DFD05C200B18808 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +73,7 @@
 				631D91A32DFC3AF300195651 /* Sources */,
 				631D91A42DFC3AF300195651 /* Frameworks */,
 				631D91A52DFC3AF300195651 /* Resources */,
+				635F3DE62DFD054C00B18808 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -65,6 +84,7 @@
 			);
 			name = FoodTracker;
 			packageProductDependencies = (
+				635F3DE92DFD05C200B18808 /* RealmSwift */,
 			);
 			productName = FoodTracker;
 			productReference = 631D91A72DFC3AF300195651 /* FoodTracker.app */;
@@ -94,6 +114,9 @@
 			);
 			mainGroup = 631D919E2DFC3AF300195651;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				635F3DE82DFD05C200B18808 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 631D91A82DFC3AF300195651 /* Products */;
 			projectDirPath = "";
@@ -251,6 +274,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C2KZ9FWN67;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -278,6 +302,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C2KZ9FWN67;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -320,6 +345,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		635F3DE82DFD05C200B18808 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		635F3DE92DFD05C200B18808 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 635F3DE82DFD05C200B18808 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 631D919F2DFC3AF300195651 /* Project object */;
 }

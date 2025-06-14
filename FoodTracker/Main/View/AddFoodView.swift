@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct AddFoodView: View {
     @State private var foodName: String = ""
@@ -60,7 +61,7 @@ struct AddFoodView: View {
                 Spacer()
                 
                 Button {
-                    vm.addFood(food: Food(name: foodName, date: foodDate, weight: Int(foodWeight) ?? 0))
+                    vm.addFood(name: foodName, weight: Int(foodWeight) ?? 0, date: foodDate)
                     dismiss()
                 } label: {
                     Text("Done")
