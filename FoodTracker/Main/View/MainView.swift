@@ -15,16 +15,21 @@ struct MainView: View {
                 // background
                 Color.white.ignoresSafeArea()
                 
-                VStack {
+                VStack(alignment: .leading) {
                     DatePicker(selection: $currentDate, displayedComponents: .date) {
                         Text("Displayed day")
                     }
                     .padding()
+                    
+                    Text("You ate \(vm.getFoodCountForDay(date: currentDate)) meals today:")
+                        .padding()
+                    
                     List {
                         ForEach(foods) { food in
                             if Calendar.current.isDate(currentDate, inSameDayAs: food.date) {
                                 HStack {
                                     Text(food.name)
+                                        
                                         .frame(maxWidth: .infinity)
                                         .padding()
                                         .background {
@@ -47,7 +52,6 @@ struct MainView: View {
                                         Text(vm.dateFormatter(date: food.date))
                                         Text(vm.timeFormatter(date: food.date))
                                     }
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
                                 }
                             }
                         }
@@ -66,6 +70,7 @@ struct MainView: View {
                             .frame(width: width * 0.15)
                             .foregroundStyle(.green)
                     }
+                    .frame(maxWidth: .infinity, alignment: .center)
 
                 }
             }
